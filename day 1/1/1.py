@@ -5,9 +5,9 @@ def readFile(path):
 
     with open(path, 'r') as file:
         for line in file:
-            # Split the line into two parts
+            
             parts = line.strip().split()
-            if len(parts) == 2:  # Ensure the line has two columns
+            if len(parts) == 2:  
                 col1.append(parts[0])
                 col2.append(parts[1])
     return col1, col2
@@ -18,7 +18,7 @@ def getMinIndex(arr):
     return int(minim), index
 
 
-file_path = "/Users/FHRN01241/Documents/advent-code-2024/1/input 1.txt"
+file_path = "/Users/FHRN01241/Documents/advent-code-2024/day 1/input 1.txt"
 arr1, arr2 = readFile(file_path)
 
 sum = 0

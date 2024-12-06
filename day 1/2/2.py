@@ -11,7 +11,7 @@ def readFile(path):
                 col2.append(parts[1])
     return col1, col2
 
-file_path = "/Users/FHRN01241/Documents/advent-code-2024/1/input 1.txt"
+file_path = "/Users/FHRN01241/Documents/advent-code-2024/day 1/input 1.txt"
 arr1, arr2 = readFile(file_path)
 
 sum = 0
