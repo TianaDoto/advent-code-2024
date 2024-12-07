@@ -3,7 +3,7 @@ def readFile(path):
 
     with open(path, 'r') as file:
         for row in file:
-            parts = row.strip().split()
+            parts = list(map(int, row.strip().split()))
             rows.append(parts)
     return rows
 
@@ -38,24 +38,14 @@ def checkDiff(row):
 
 
 def checkSafe(row):
-    if(checkIncrease(row) and checkDiff(row)):
-        return True
-    elif(checkDecrease(row) and checkDiff(row)):
-        return True
+    if(checkIncrease(row) or checkDecrease(row)):
+        if(checkDiff(row)):
+            return True
     else:
         return False
 
 filePath = "/Users/FHRN01241/Documents/advent-code-2024/day 2/input 2.txt"
 rows = readFile(filePath)
-
-rowsTmp = [
-    [7, 6, 4, 2, 1],
-    [1, 2, 7, 8, 9],
-    [9, 7, 6, 2, 1],
-    [1, 3, 2, 4, 5],
-    [8, 6, 4, 4, 1],
-    [1, 3, 6, 7, 9]
-]
 
 sum = 0
 for row in rows:
